@@ -11,6 +11,7 @@ enum operation {
 
 describe("calculate function", () => {
   const testCases = [
+    { input: "", operation: "add", expected: 0 },
     { input: "1,2,3", operation: "add", expected: 6 },
     { input: "10\\n20,30", operation: "add", expected: 60 },
     { input: "10,5,2", operation: "subtract", expected: 3 },
@@ -23,6 +24,7 @@ describe("calculate function", () => {
     { input: "//[***]\\n1***2***3", operation: "add", expected: 6 },
     { input: "//[*][%]\\n1*2%23", operation: "add", expected: 26 },
     { input: "//[*][%]\\n1*2004%23", operation: "add", expected: 24 },
+    { input: "//[**][%%]\\n1**2%%3", operation: "add", expected: 6 },
   ];
 
   testCases.forEach(({ input, operation, expected }) => {

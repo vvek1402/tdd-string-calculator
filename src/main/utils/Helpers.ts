@@ -55,5 +55,5 @@ export const splitNumbers = (numbers: string, dividers: string[]): number[] => {
 
   return result
     .map((num) => parseInt(num.trim(), 10)) 
-    .filter((num) => !isNaN(num) && num < 1000); 
+    .filter((num) => !isNaN(num) && num < 1001); 
 };

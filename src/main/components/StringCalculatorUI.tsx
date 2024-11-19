@@ -40,8 +40,12 @@ const StringCalculatorUI = () => {
 
       setResult(calcResult);
       setError(null);
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        setError(e.message);
+      } else {
+        setError("An unknown error occurred");
+      }
       setResult(null);
     }
   };
@@ -51,60 +55,64 @@ const StringCalculatorUI = () => {
     setInput("");
     setError(null);
     setResult(null);
-  }
+  };
 
   return (
-    <div className="calculator-container">
-      <h1 className="title">TDD String Calculator</h1>
+    <>
+      <div className="calculator-container">
+        <h1 className="title">TDD String Calculator</h1>
 
-      <div className="input-group">
-        <label htmlFor="input">Enter numbers:</label>
-        <input
-          type="text"
-          id="input"
-          value={input}
-          onChange={(event) => setInput(event.target.value)}
-          placeholder="e.g., 1,2,3 or //;\n1;2;3"
-        />
-      </div>
-
-      <div className="input-group">
-        <label htmlFor="operation">Select Operation:</label>
-        <select
-          id="operation"
-          value={operation}
-          onChange={(event) => setOperation(event.target.value)}
-        >
-          <option value="add">Add</option>
-          <option value="sub">Subtract</option>
-          <option value="mul">Multiply</option>
-          <option value="div">Divide</option>
-        </select>
-      </div>
-
-      <div className="flex-justify" >
-      <button className="calculate-btn" onClick={handleCalculate}>
-        Calculate
-      </button>
-
-      <button className="reset-btn" onClick={() => handleReset()}>
-        Reset
-      </button>
-      </div>
- 
-
-      {result !== null && (
-        <div className="result">
-          <h2>Result: {result}</h2>
+        <div className="input-group">
+          <label htmlFor="input">Enter numbers:</label>
+          <input
+            type="text"
+            id="input"
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+            placeholder="e.g., 1,2,3 or //;\n1;2;3"
+          />
         </div>
-      )}
 
-      {error && (
-        <div className="error">
-          <h3>Error: {error}</h3>
+        <div className="input-group">
+          <label htmlFor="operation">Select Operation:</label>
+          <select
+            id="operation"
+            value={operation}
+            onChange={(event) => setOperation(event.target.value)}
+          >
+            <option value="add">Add</option>
+            <option value="sub">Subtract</option>
+            <option value="mul">Multiply</option>
+            <option value="div">Divide</option>
+          </select>
         </div>
-      )}
-    </div>
+
+        <div className="btn-group ">
+          <button className="calculate-btn" onClick={handleCalculate}>
+            Calculate
+          </button>
+
+          <button className="reset-btn" onClick={() => handleReset()}>
+            Reset
+          </button>
+        </div>
+
+        {result !== null && (
+          <div className="result">
+            <h2>Result: {result}</h2>
+          </div>
+        )}
+
+        {error && (
+          <div className="error">
+            <h3>Error: {error}</h3>
+          </div>
+        )}
+      </div>
+      <div>
+        <p className="center">Developed By Vivek Moradiya</p>
+      </div>
+    </>
   );
 };
 
