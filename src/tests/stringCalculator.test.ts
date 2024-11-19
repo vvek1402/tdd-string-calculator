@@ -25,6 +25,9 @@ describe("calculate function", () => {
     { input: "//[*][%]\\n1*2%23", operation: "add", expected: 26 },
     { input: "//[*][%]\\n1*2004%23", operation: "add", expected: 24 },
     { input: "//[**][%%]\\n1**2%%3", operation: "add", expected: 6 },
+    { input: "//%%%\\n1%%%3", operation: "add", expected: 4 },
+    { input: "//[**][%%%][^^]\\n1**2%%%3^^6", operation: "add", expected: 12 },
+
   ];
 
   testCases.forEach(({ input, operation, expected }) => {
