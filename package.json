@@ -1,4 +1,5 @@
 {
+  "homepage": "https://vvek1402.github.io/tdd-string-calculator",
   "name": "tdd-react-string-calc",
   "private": true,
   "version": "0.0.0",
@@ -8,7 +9,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build" 
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -23,6 +26,7 @@
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+    "gh-pages": "^6.2.0",
     "globals": "^15.11.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
