@@ -1,63 +1,92 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
 .calculator-container {
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    padding: 20px;
-    max-width: 400px;
-    margin: 0 auto;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .title {
-    text-align: center;
-    color: #333;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .input-group {
-    margin: 20px 0;
-  }
-  
-  .input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .input-group input,
-  .input-group select {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .calculate-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
-  }
-  
-  .calculate-btn:hover {
-    background-color: #45a049;
-  }
-  
-  .result,
-  .error {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 18px;
-  }
-  
-  .result h2 {
-    color: #4CAF50;
-  }
-  
-  .error h3 {
-    color: red;
-  }
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 400px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin: 20px 0;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.calculate-btn {
+  background-color: #228be6;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.reset-btn {
+  background-color: #fd7e14;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.result,
+.error {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.result h2 {
+  color: #4CAF50;
+}
+
+.error h3 {
+  color: red;
+}
+
+.flex-justify {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}

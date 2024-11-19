@@ -39,15 +39,23 @@ const StringCalculatorUI = () => {
       }
 
       setResult(calcResult);
+      setError(null);
     } catch (e: any) {
       setError(e.message);
       setResult(null);
     }
   };
 
+  const handleReset = () => {
+    setOperation("add");
+    setInput("");
+    setError(null);
+    setResult(null);
+  }
+
   return (
     <div className="calculator-container">
-      <h1 className="title">String Calculator</h1>
+      <h1 className="title">TDD String Calculator</h1>
 
       <div className="input-group">
         <label htmlFor="input">Enter numbers:</label>
@@ -74,9 +82,16 @@ const StringCalculatorUI = () => {
         </select>
       </div>
 
+      <div className="flex-justify" >
       <button className="calculate-btn" onClick={handleCalculate}>
         Calculate
       </button>
+
+      <button className="reset-btn" onClick={() => handleReset()}>
+        Reset
+      </button>
+      </div>
+ 
 
       {result !== null && (
         <div className="result">
