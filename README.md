@@ -1,50 +1,31 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## TDD String Calculator
 
-Currently, two official plugins are available:
+This project contains a string calculator with various test cases to validate its functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Steps to Setup and Run the Project
 
-## Expanding the ESLint configuration
+### 1. Clone the Repository
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+First, clone the repository to your local machine:
 
-- Configure the top-level `parserOptions` property like this:
+    git clone https://github.com/vvek1402/tdd-string-calculator.git
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install Dependencies
+Navigate to the project directory and install the necessary dependencies using npm:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    npm install
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+### 3. Run Tests
+The test cases for the string calculator are provided in the StringCalculator.test.ts file. To run the tests, use the following command:
+
+    npm test
+
+### 4. Start Frontend Development Server
+To run the frontend of the project, use the following command:
+
+    npm run dev
+
+Enjoy Coding! 🚀
