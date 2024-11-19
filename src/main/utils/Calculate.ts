@@ -13,7 +13,6 @@ export const calculate = (
     });
   }
 
-  console.log(delimiter)
   const numList: number[] = splitNumbers(numbers, delimiter);
   checkNegative(numList);
 
